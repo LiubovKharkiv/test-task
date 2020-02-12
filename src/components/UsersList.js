@@ -32,7 +32,7 @@ class UsersList extends React.Component {
       <div>
         <ul className="list-group">{this.renderList()}</ul>
       </div>
-      //<div className="">PostList</div>
+  
     );
   }
 }
