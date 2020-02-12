@@ -1,12 +1,21 @@
-import React from 'react';
-import PostList from './PostList';
-import UsersList from './UsersList';
+
+import React from "react";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+//import history from '../history';
+import PostsList from "./PostsList";
+import UsersList from "./UsersList";
 
 const App = () => {
   return (
     <div className="container">
-      <UsersList />
-      {/* <PostList /> */}
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={UsersList} />
+          <Route path="/users" component={UsersList} />
+          <Route path="/:user_posts" component={PostsList} />
+          <Redirect to="/" />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 };
